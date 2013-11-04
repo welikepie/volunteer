@@ -13,10 +13,11 @@ var path = require('path');
 var MailChimpAPI = require('mailchimp').MailChimpAPI;
 var apiKey = 'ee0a7bbcca4a288c0da80ad86b7c9d24-us2';  // Change this to your Key
 var listID = '9ad5bd699e';  // Change this to your List ID
-var merge_vars = {
-    FNAME : "Charlotte",
-    LNAME : "Spencer",
+/* var merge_vars = {
+    FNAME : req.query.FNAME,
+    LNAME : req.query.LNAME,
 };
+*/
 
 try {
     var mcApi = new MailChimpAPI(apiKey, { version : '1.3', secure : false });
@@ -62,7 +63,7 @@ var tomerge = [];
 
 app.post('/', function(req, res){
     console.log(req);
-    mcApi.listSubscribe({id: listID, email_address:req.body.email, double_optin: false}, function (error, data) {
+    mcApi.listSubscribe({id: listID, email_address:req.body.email, merge_vars: {FNAME: req.body.FNAME, LNAME: req.body.LNAME}, double_optin: false}, function (error, data) {
         if (error){
             console.log(error);
             res.send("<p class='error'>Something went wrong. Please try again.</p>");
