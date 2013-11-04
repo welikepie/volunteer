@@ -9,7 +9,7 @@ var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 var checkboxes = require('./public/javascripts/checkbox.js');
-var returnedArr = checkboxes.checkbox;
+var returnedArr = checkboxes.england;
 
 //SETUP MAILCHIMP API - You must replace your API Key and List ID which you can find in your Mailchimp Account
 var MailChimpAPI = require('mailchimp').MailChimpAPI;
@@ -54,7 +54,17 @@ app.get('/events', function(req, res) {
 
 app.post('/', function(req, res){
     console.log(req);
-    mcApi.listSubscribe({id: listID, email_address:req.body.email, merge_vars: {FNAME: req.body.FNAME, LNAME: req.body.LNAME, GROUPINGS: [{name: "England", groups: "London" }]}, double_optin: false}, function (error, data) {
+    mcApi.listSubscribe({
+    	id: listID, 
+    	email_address:req.body.email, 
+    	merge_vars: {
+    		FNAME: req.body.FNAME, 
+    		LNAME: req.body.LNAME, 
+    		// Needed: Integration of Checkbox.js Function to retrieve groups ticked for England. 
+    		GROUPINGS: [{name: "England", groups: "London"}]}, 
+    	double_optin: false}, 
+
+    	function (error, data) {
         if (error){
             console.log(error);
             res.send("<p class='error'>Something went wrong. Please try again.</p>");
