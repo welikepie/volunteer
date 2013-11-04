@@ -53,27 +53,36 @@ app.get('/events', function(req, res) {
 
 
 app.post('/', function(req, res){
-    console.log(req);
+    console.log(req.body);
+    try{
+    	var GROUPINGS = JSON.parse(req.body.GROUPINGS);
+    	var FNAME = JSON.parse(req.body.FNAME);
+    	var LNAME = JSON.parse(req.body.LNAME);
+    	var EMAIL = JSON.parse(req.body.EMAIL);
     mcApi.listSubscribe({
     	id: listID, 
-    	email_address:req.body.email, 
+    	email_address:EMAIL, 
     	merge_vars: {
-    		FNAME: req.body.FNAME, 
-    		LNAME: req.body.LNAME, 
+    		"FNAME": FNAME, 
+    		"LNAME": LNAME, 
     		// Needed: Integration of Checkbox.js Function to retrieve groups ticked for England. 
-    		GROUPINGS: [{name: "England", groups: "London"}]}, 
-    	double_optin: false}, 
+    		"GROUPINGS": GROUPINGS}, 
+    	"double_optin": false}, 
 
     	function (error, data) {
         if (error){
-            console.log(error);
             res.send("<p class='error'>Something went wrong. Please try again.</p>");
+        	console.log(error); //this is now sent to the terminal of the browser.
         }
         else {
             console.log(data);
             res.send("<p class='success'>Thanks for signing up!</p>");
         }
     });
+    }catch(e){
+    	console.log(e.stack);
+    	console.log("STUFF BE BROKE");
+    }
 });
 
 http.createServer(app).listen(app.get('port'), function(){
