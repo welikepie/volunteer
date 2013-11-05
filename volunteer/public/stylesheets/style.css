@@ -3,6 +3,11 @@ body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+fieldset {
+	margin: 0;
+	border: 0;
+}
+
 .header {
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	color: #fff;
@@ -53,6 +58,10 @@ body {
 .name {
 	text-align: center;
 	margin: 0 auto;
+}
+
+.checkedall {
+	font-weight: bold;
 }
 
 .eventbubble {

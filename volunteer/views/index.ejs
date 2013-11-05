@@ -7,6 +7,7 @@
 
 		<!-- Begin MailChimp Signup Form -->
 		<script src="./javascripts/frontendCheck.js" type="text/javascript"></script>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<div class="header">Volunteer</div>
 
 		<div class="introtext">
@@ -31,38 +32,49 @@
 			<input type="email" value="" name="email" id="JS-EMAIL" placeholder="Email Address">
 		</div>
 		<div class="location">
+			<fieldset>
 		    <div class="name">England</div>
 		    	<ul>
+		    		<li class="checkedall"><input type="checkbox" class="checkall"><label for="Check_All_Locations">All of England</label></li>
 		    		<li><input type="checkbox" class="England" id="North_East_England"><label for="North_East_England">North East England</label></li>
-					<li><input type="checkbox" class="England" id="North_West_England"><label for="North_West_England">North West England</label></li>
-					<li><input type="checkbox" class="England" id="Yorkshire_and_Humber"><label for="Yorkshire_and_Humber" >Yorkshire and Humber</label></li>
-					<li><input type="checkbox" class="England" id="East_Midlands"><label for="East_Midlands">East Midlands</label></li>
-					<li><input type="checkbox" class="England" id="West_Midlands"><label for="West_Midlands">West Midlands</label></li>
-					<li><input type="checkbox" class="England" id="East_of_England"><label for="East_of_England">East of England</label></li>
-					<li><input type="checkbox" class="England" id="London"><label for="London">London</label></li>
-					<li><input type="checkbox" class="England" id="South_East_England"><label for="South_East_England">South East England</label></li>
-					<li><input type="checkbox" class="England" id="South_West_England"><label for="South_West_England">South West England</label></li>
+						<li><input type="checkbox" class="England" id="North_West_England"><label for="North_West_England">North West England</label></li>
+						<li><input type="checkbox" class="England" id="Yorkshire_and_Humber"><label for="Yorkshire_and_Humber" >Yorkshire and Humber</label></li>
+						<li><input type="checkbox" class="England" id="East_Midlands"><label for="East_Midlands">East Midlands</label></li>
+						<li><input type="checkbox" class="England" id="West_Midlands"><label for="West_Midlands">West Midlands</label></li>
+						<li><input type="checkbox" class="England" id="East_of_England"><label for="East_of_England">East of England</label></li>
+						<li><input type="checkbox" class="England" id="London"><label for="London">London</label></li>
+						<li><input type="checkbox" class="England" id="South_East_England"><label for="South_East_England">South East England</label></li>
+						<li><input type="checkbox" class="England" id="South_West_England"><label for="South_West_England">South West England</label></li>
 				</ul>
-
+			</fieldset>
+			
+			<fieldset>
 				<div class="name">Ireland</div>
 				    <ul>
 				    	<li><input type="checkbox" class="Ireland" id="Ireland"><label for="Ireland">Ireland</label></li>
 						</ul>
-
+			</fieldset>
+			
+			<fieldset>
 				<div class="name">Northern Ireland</div>
 				    <ul>
 				    	<li><input type="checkbox" class="Northern_Ireland" id="Northern_Ireland"><label for="Northern_Ireland">Northern Ireland</label></li>
 						</ul>
+			</fieldset>
 
+			<fieldset>
 				<div class="name">Scotland</div>
 				    <ul>
 				    	<li><input type="checkbox" class="Scotland" id="Scotland"><label for="Scotland">Scotland</label></li>
 						</ul>
+			</fieldset>
 
+			<fieldset>
 				<div class="name">Wales</div>
 				    <ul>
 				    	<li><input type="checkbox" class="Wales" id="Wales"><label for="Wales">Wales</label></li>
 						</ul>
+			</fieldset>
 
 		</div>
 
@@ -79,5 +91,13 @@
 
 
 		</div>
+
+		<script>
+			$(function () {
+		    $('.checkall').on('click', function () {
+		      $(this).closest('fieldset').find(':checkbox').prop('checked', this.checked);
+		    });
+			});
+		</script>
 		</body>
 	</html>
