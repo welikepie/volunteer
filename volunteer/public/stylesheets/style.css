@@ -120,6 +120,7 @@ input[type="checkbox"] {
 ul {
 	list-style: none;
 	border-bottom: dashed 1px #cccccc;
+	margin-bottom: 15px;
 }
 
 ul.events {

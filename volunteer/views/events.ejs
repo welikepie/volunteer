@@ -16,7 +16,11 @@
     	<div class="name">London</div>
       <ul class="events">
         <li ng-repeat="item in london">
+          <ul>
           <a href={{item.URL}}><span>{{item.Event}}</span></a>
+          <p>{{item.Description}}</p>
+          <p>Contact: <a href="mailto:{{item.Contact}}"><span>{{item.Contact}}</span></a></p>
+        </ul>
         </li>
       </ul>
 			</div>
