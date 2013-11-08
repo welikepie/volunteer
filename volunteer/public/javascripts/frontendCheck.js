@@ -2,7 +2,17 @@ window.onload = function() {
 	//document.getElementById("mc-embedded-subscribe").addEventListener("click",return exports.formGet());
 }
 var exports = {
-	"formGet" : function() {
+	"clicked" : "",
+	"errorEls" : {
+			"FNAME":$("#JS-EFNAME"),
+			"LNAME":$("#JS-ELNAME"),
+			"EMAIL":$("#JS-EEMAIL"),
+			"GROUPINGS":""
+		},
+	"formGet" : function(element) {
+		exports.clicked=element;
+		$(".error").addClass("hidden");
+		console.log(exports.clicked);
 		var classNames = [];
 		var JSON = {
 			"classes" : {},
@@ -59,7 +69,9 @@ var exports = {
 			JSON.EMAIL = document.getElementById("JS-EMAIL").value;
 			//Now we have our JSON objects having parsed the checkboxes. Woop woop!
 			
-			exports.sendAcross(JSON);//send data to our sendAcross function. Might want to do some error checking here.
+			if(exports.errorChecking(JSON)==true){
+				exports.sendAcross(JSON);//send data to our sendAcross function. Might want to do some error checking here.
+			}
 		} catch(e) {
 			console.log(e.stack);
 		}
@@ -75,11 +87,48 @@ var exports = {
 					"error" : xhReq.readyState //if error, log it
 				});
 			}
-			var serverResponse = xhReq.responseText;
-			console.log(serverResponse);//console.log the response
+			var serverResponse = JSON.parse(xhReq.responseText);
+			if(serverResponse.test == false){
+				console.log(serverResponse.error);
+				//Error response from the mailchimp API here.
+			}
 		};
 		xhReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); //form encoding
 		xhReq.send("GROUPINGS="+JSON.stringify(input.GROUPINGS)+"&FNAME="+JSON.stringify(input.FNAME)+"&LNAME="+JSON.stringify(input.LNAME)+"&EMAIL="+JSON.stringify(input.EMAIL));
 		// ^ Creating a URL string to post to the server.
+	},
+	"errorChecking" : function(input){
+		//passing the JSON in to here to cycle through.
+		var errorString = "";
+		if(input.FNAME==""){
+			exports.displayError("FNAME");
+			errorString +="1";
+		}
+		if(input.LNAME==""){
+			exports.displayError("LNAME");
+		errorString +="1";
+		}
+		if(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,4}/.test(input.EMAIL) == false||input.EMAIL =="" ){
+			exports.displayError("EMAIL");
+			errorString +="1";
+		}
+		if(input.GROUPINGS.length == 0){
+			exports.errorEls["GROUPINGS"] = $(exports.clicked).parent().siblings(".error");
+			exports.displayError("GROUPINGS");
+			errorString +="1";
+		}
+		if(errorString.length == 0){
+			return true;
+		}
+		else{
+			console.log("SHIT GETTING DONE!");
+			return false;
+		}
+	},
+	"displayError":function(type){
+		console.log(type);
+		console.log(exports.errorEls[type]);
+		exports.errorEls[type].removeClass("hidden");
 	}
 }
+console.log(exports.errorEls);

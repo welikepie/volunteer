@@ -213,7 +213,7 @@ ul {
 	padding: 0;
 }
 
-.submit {
+.submit,.error {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -263,4 +263,16 @@ ul {
 .submit:active {
 	position:relative;
 	top:1px;
+}
+
+.error{
+	width:336px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #AD6868;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #AD6868;
+	box-shadow:inset 0px 1px 0px 0px #AD6868;
+	background-color:#FAAFAF;
+	margin-top:10px;
+}
+.error div{
+	margin-top:15px;
 }

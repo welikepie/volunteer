@@ -65,12 +65,12 @@ app.post('/', function(req, res){
 
     	function (error, data) {
         if (error){
-            res.send("<p class='error'>Something went wrong. Please try again.</p>");
+            res.end("{\"response\":\"error\",\"test\":false,\"error\":\""+error+"\"}");
         	//console.log(error); //this is now sent to the terminal of the browser.
         }
         else {
             // console.log(data);
-            res.send("<p class='success'>Thanks for signing up!</p>");
+            res.end("{\"response\":\"success\",\"test\":true}");
         }
     });
     }catch(e){
