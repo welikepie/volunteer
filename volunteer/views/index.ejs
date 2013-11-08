@@ -35,7 +35,7 @@
 		<div class="location">
 			<fieldset>
 		    <div class="name">England</div>
-		    	<ul>
+		    	<ul class="hidden">
 		    		<li class="checkedall"><input type="checkbox" class="checkall"><label for="Check_All_Locations">All of England</label></li>
 		    		<li><input type="checkbox" class="England" id="North_East_England"><label for="North_East_England">North East England</label></li>
 						<li><input type="checkbox" class="England" id="North_West_England"><label for="North_West_England">North West England</label></li>
@@ -46,36 +46,50 @@
 						<li><input type="checkbox" class="England" id="London"><label for="London">London</label></li>
 						<li><input type="checkbox" class="England" id="South_East_England"><label for="South_East_England">South East England</label></li>
 						<li><input type="checkbox" class="England" id="South_West_England"><label for="South_West_England">South West England</label></li>
+						<li><input type="submit" onclick="return exports.formGet()" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit"></li>
 				</ul>
 			</fieldset>
-			
+		</div>
+
+		<div class="location">	
 			<fieldset>
 				<div class="name">Ireland</div>
-				    <ul>
+				    <ul class="hidden">
 				    	<li><input type="checkbox" class="Ireland" id="Ireland"><label for="Ireland">Ireland</label></li>
+				    	<li><input type="submit" onclick="return exports.formGet()" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit"></li>
 						</ul>
 			</fieldset>
-			
+		</div>
+
+		<div class="location">
 			<fieldset>
 				<div class="name">Northern Ireland</div>
-				    <ul>
+				    <ul class="hidden">
 				    	<li><input type="checkbox" class="Northern_Ireland" id="Northern_Ireland"><label for="Northern_Ireland">Northern Ireland</label></li>
+				    	<li><input type="submit" onclick="return exports.formGet()" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit"></li>
 						</ul>
 			</fieldset>
-
+		</div>
+		
+		<div class="location">
 			<fieldset>
 				<div class="name">Scotland</div>
-				    <ul>
+				    <ul class="hidden">
 				    	<li><input type="checkbox" class="Scotland" id="Scotland"><label for="Scotland">Scotland</label></li>
+				    	<li><input type="submit" onclick="return exports.formGet()" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit"></li>
 						</ul>
 			</fieldset>
+		</div>
 
+		<div class="location">
 			<fieldset>
 				<div class="name">Wales</div>
 				    <ul>
 				    	<li><input type="checkbox" class="Wales" id="Wales"><label for="Wales">Wales</label></li>
+				    	<li><input type="submit" onclick="return exports.formGet()" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit"></li>
 						</ul>
 			</fieldset>
+		</div>
 
 		</div>
 
@@ -84,11 +98,6 @@
 				<div class="response" id="mce-success-response" style="display:none"></div>
 			</div>	
 
-			<div class="clear">
-				<input type="submit" onclick="return exports.formGet()" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit">
-			</div>
-
-			<div class="location" id="error"></div>
 		</form>
 
 		</div>

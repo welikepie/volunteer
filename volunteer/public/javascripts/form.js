@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    $('ul').addClass('hidden');
+});
+
 $(function () {
 	$('.checkall').on('click', function () {
 		$(this).closest('fieldset').find(':checkbox').prop('checked', this.checked);
@@ -7,6 +11,19 @@ $(function () {
 $(function () {
 	$('.England').on('click', function () {
 		$(this).closest('fieldset').find('.checkall').prop('checked', false);
+	});
+});
+
+$(function () {
+	$('.name').on('click', function () {
+		if($(this).siblings('ul').hasClass('hidden')) {
+
+		$('li').closest('ul').addClass('hidden');
+		$(this).siblings('ul').toggleClass('hidden');
+
+		} else {
+			$(this).siblings('ul').toggleClass('hidden');
+		}
 	});
 });
 

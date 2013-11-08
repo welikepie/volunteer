@@ -3,7 +3,6 @@
  * Module dependencies.
  */
 
-// var flash = require('connect-flash');
 var config = require('./config');
 var express = require('express');
 var routes = require('./routes');
@@ -23,12 +22,6 @@ try {
 }
 
 var app = express();
-
-/* app.configure(function() {
-  app.use(express.cookieParser('volunteer'));
-  app.use(express.session({ cookie: { maxAge: 60000 }}));
-  app.use(flash());
-}); */
 
 // all environments
 app.set('port', process.env.PORT || 3000);
