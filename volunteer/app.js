@@ -3,24 +3,18 @@
  * Module dependencies.
  */
 
-var flash = require('connect-flash');
+// var flash = require('connect-flash');
+var config = require('./config');
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
-var checkboxes = require('./public/javascripts/checkbox.js');
-var returnedArr = checkboxes.england;
 
 //SETUP MAILCHIMP API - You must replace your API Key and List ID which you can find in your Mailchimp Account
 var MailChimpAPI = require('mailchimp').MailChimpAPI;
-var apiKey = 'ee0a7bbcca4a288c0da80ad86b7c9d24-us2';  // Change this to your Key
-var listID = '9ad5bd699e';  // Change this to your List ID
-/* var merge_vars = {
-    FNAME : req.query.FNAME,
-    LNAME : req.query.LNAME,
-};
-*/
+var apiKey = config.mailchimp.api;  // Change this to your Key
+var listID = config.mailchimp.list;  // Change this to your List ID
 
 try {
     var mcApi = new MailChimpAPI(apiKey, { version : '1.3', secure : false });
@@ -30,11 +24,11 @@ try {
 
 var app = express();
 
-app.configure(function() {
+/* app.configure(function() {
   app.use(express.cookieParser('volunteer'));
   app.use(express.session({ cookie: { maxAge: 60000 }}));
   app.use(flash());
-});
+}); */
 
 // all environments
 app.set('port', process.env.PORT || 3000);
