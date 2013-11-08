@@ -13,24 +13,25 @@ Those interested in volunteering can subscribe to a dedicated mailing list at vo
 
 Yay! Glad to see you're interested. You can submit an event in one of two ways.
 
-1. Submit a pull request to this repo, with the details of your event inserted into "controllers.js". We'll get these merged as quickly as possible. Your event should look something like the following:
+- Submit a pull request to this repo, with the details of your event inserted into "controllers.js". We'll get these merged as quickly as possible. Your event should look something like the following:
 
-	{
-	"Country": "London",
-	"Event" : "Cats and Lasers",
-	"URL": "http://www.catsandlasers.com",
-	"Description": "We're going to strap lasers to cats and have a dance party! Laser professionals required. Volunteer cats always useful",
-	"Contact" : "hello@catsandlasers.co.uk",
-	"Date" : "25/12/2013"
-	},
+<pre>{
+"Country": "London",
+"Event" : "Cats and Lasers",
+"URL": "http://www.catsandlasers.com",
+"Description": "We're going to strap lasers to cats and have a dance party! Laser professionals required.",
+"Contact" : "hello@catsandlasers.co.uk",
+"Date" : "25/12/2013"
+},</pre>
 
 The date of your event should be in a day/month/year format. 
 
-2. Email us at contact@eventhandler.co.uk. Shoot us an email containing the location, name, URL, Description, contact details and date of your event. We'll do the rest. 
+-  Email us at contact@eventhandler.co.uk. Shoot us an email containing the location, name, URL, Description, contact details and date of your event. We'll do the rest. 
 
 ### How was Volunteer made?
 
-Volunteer is a [node.js](http://www.nodejs.org) app, using the [express](https://npmjs.org/package/express), [ejs](https://npmjs.org/package/ejs) and [mailchimp](https://npmjs.org/package/mailchimp) node modules. There's also some [Angular.js](http://angularjs.org/) for the front-end event displays. 
-[Arran](http://www.twitter.com/arranrp) came up with the idea, [Charlotte](http://www.twitter.com/charlotteis) executed it, [Alex](http://www.twitter.com/alexHacked) helped. 
-Also, Magic. 
+- Volunteer is a [node.js](http://www.nodejs.org) app, using the [express](https://npmjs.org/package/express), [ejs](https://npmjs.org/package/ejs) and [mailchimp](https://npmjs.org/package/mailchimp) node modules. 
+- There's also some [Angular.js](http://angularjs.org/) for the front-end event displays.
+- [Arran](http://www.twitter.com/arranrp) came up with the idea, [Charlotte](http://www.twitter.com/charlotteis) executed it, [Alex](http://www.twitter.com/alexHacked) helped. 
+- Also, Magic. 
 
