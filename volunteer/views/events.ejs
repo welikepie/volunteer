@@ -16,14 +16,14 @@
     	<div class="name">London</div>
       <ul class="events">
         <li ng-repeat="item in london">
-          <ul>
           <a href={{item.URL}}><span>{{item.Event}}</span></a>
           <p>{{item.Description}}</p>
           <p>Contact: <a href="mailto:{{item.Contact}}"><span>{{item.Contact}}</span></a></p>
-        </ul>
         </li>
       </ul>
 			</div>
+
+    <!-- If you're adding a scope that didn't exist before, make sure that the example below is present and uncommented on this page, where mentions of "scotland" are changed to the scope you are submitting to. This will enable the new scope to be visible on the events page. 
 
 			<div class="divider"></div>
 
@@ -32,11 +32,25 @@
       <ul class="events">
         <li ng-repeat="item in scotland">
           <a href={{item.URL}}><span>{{item.Event}}</span></a>
+          <p>{{item.Description}}</p>
+          <p>Contact: <a href="mailto:{{item.Contact}}"><span>{{item.Contact}}</span></a></p>
+        </li>
+      </ul>
+    </div> -->
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="eventbubble">
+      <div class="name">Submit your event!</div>
+      <ul class="events">
+        <li>
+          <p>If you want submit an event you can do one of two things.</p>
+          <p>1. Submit a pull request to the repository on <strong><a href="https://github.com/welikepie/volunteer">GitHub</a></strong>. Check out the quick readme, add your event and we'll merge it as quickly as possible.</p>
+          <p>2. Email as at <a href="mailto:contact@eventhandler.co.uk">contact@eventhandler.co.uk</a>, making sure to give us a name, description, url, contact and date of the event.</p>
         </li>
       </ul>
     </div>
-    </div>
-
 
   </body>
 </html>

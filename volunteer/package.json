@@ -8,6 +8,7 @@
   "dependencies": {
     "express": "3.4.3",
     "ejs": "*",
-    "mailchimp": "1.1.0"
+    "mailchimp": "1.1.0",
+    "connect-flash": "0.1.1"
   }
 }

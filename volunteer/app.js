@@ -3,6 +3,7 @@
  * Module dependencies.
  */
 
+var flash = require('connect-flash');
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
@@ -28,6 +29,12 @@ try {
 }
 
 var app = express();
+
+app.configure(function() {
+  app.use(express.cookieParser('volunteer'));
+  app.use(express.session({ cookie: { maxAge: 60000 }}));
+  app.use(flash());
+});
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -72,16 +79,16 @@ app.post('/', function(req, res){
     	function (error, data) {
         if (error){
             res.send("<p class='error'>Something went wrong. Please try again.</p>");
-        	console.log(error); //this is now sent to the terminal of the browser.
+        	//console.log(error); //this is now sent to the terminal of the browser.
         }
         else {
-            console.log(data);
+            // console.log(data);
             res.send("<p class='success'>Thanks for signing up!</p>");
         }
     });
     }catch(e){
     	console.log(e.stack);
-    	console.log("STUFF BE BROKE");
+    	//console.log("STUFF BE BROKE");
     }
 });
 

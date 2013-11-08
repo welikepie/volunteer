@@ -120,7 +120,6 @@ input[type="checkbox"] {
 ul {
 	list-style: none;
 	border-bottom: dashed 1px #cccccc;
-	margin-bottom: 15px;
 }
 
 ul.events {
@@ -130,6 +129,8 @@ ul.events {
 ul.events li {
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-size: 14px;
+		border-bottom: dashed 1px #cccccc;
+		margin-bottom: 15px;
 }
 
 li label {
