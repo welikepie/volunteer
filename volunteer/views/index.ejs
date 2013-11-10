@@ -22,23 +22,30 @@
 		<div>
 		<form action="/" method="POST" id="mailChimpForm">
 		<form id="mailChimpForm">
-		<div class="userdeets">
-			<input type="text" value="" name="FNAME" id="JS-FNAME" placeholder="First Name">
-		</div>
-	<div class="error hidden"id="JS-EFNAME"><div>Error! You left your First Name out!</div></div></li>
-		<div class="userdeets">
-			<input type="text" value="" name="LNAME" id="JS-LNAME" placeholder="Last Name">
-		</div>
-	<div class="error hidden" id="JS-ELNAME"><div>Error! You left your Last Name out!</div></div></li>
-		<div class="userdeets">
-			<input type="email" value="" name="email" id="JS-EMAIL" placeholder="Email Address">
-		</div>
-	<div class="error hidden" id="JS-EEMAIL"><div>Error! You left your Email Address out!</div></div>
-		</li>
+			<div class="userdeets">
+				<input type="text" value="" name="FNAME" id="JS-FNAME" placeholder="First Name">
+			</div>
+				<div class="error hidden"id="JS-EFNAME">
+					<div>Woops! Could we get your first name please?</div>
+				</div>
+			<div class="userdeets">
+				<input type="text" value="" name="LNAME" id="JS-LNAME" placeholder="Last Name">
+			</div>
+				<div class="error hidden" id="JS-ELNAME">
+					<div>Uh Oh! Don't forget your last name.Error!</div>
+				</div>
+			<div class="userdeets">
+				<input type="email" value="" name="email" id="JS-EMAIL" placeholder="Email Address">
+			</div>
+				<div class="error hidden" id="JS-EEMAIL">
+					<div>Error! We need your contact so we can send awesome volunteering opportunities your way.</div>
+				</div>
+
 		<div class="location">
 			<fieldset>
-		    <div class="name">England</div>
+		    <div class="name">United Kingdom</div>
 		    	<ul class="hidden">
+		    		<div class="subname">England</div>
 		    		<li class="checkedall"><input type="checkbox" class="checkall"><label for="Check_All_Locations">All of England</label></li>
 		    		<li><input type="checkbox" class="England" id="North_East_England"><label for="North_East_England">North East England</label></li>
 						<li><input type="checkbox" class="England" id="North_West_England"><label for="North_West_England">North West England</label></li>
@@ -49,55 +56,137 @@
 						<li><input type="checkbox" class="England" id="London"><label for="London">London</label></li>
 						<li><input type="checkbox" class="England" id="South_East_England"><label for="South_East_England">South East England</label></li>
 						<li><input type="checkbox" class="England" id="South_West_England"><label for="South_West_England">South West England</label></li>
+					</ul>
+
+					<ul class="hidden">
+						<div class="subname">Northern Ireland</div>
+						<li class="checkedall"><input type="checkbox" class="checkall"><label for="Check_All_Locations">All of Northern Ireland</label></li>
+						<li><input type="checkbox" class="Northern_Ireland" id="Antrim"><label for="Antrim">Antrim</label></li>
+						<li><input type="checkbox" class="Northern_Ireland" id="Armagh"><label for="Armagh">Armagh</label></li>
+						<li><input type="checkbox" class="Northern_Ireland" id="Down"><label for="Down">Down</label></li>
+						<li><input type="checkbox" class="Northern_Ireland" id="Fermanagh"><label for="Fermanagh">Fermanagh</label></li>
+						<li><input type="checkbox" class="Northern_Ireland" id="Londonderry"><label for="Londonderry">Londonderry</label></li>
+						<li><input type="checkbox" class="Northern_Ireland" id="Tyrone"><label for="Tyrone" >Tyrone</label></li>
+					</ul>
+
+					<ul class="hidden">
+						<div class="subname">Scotland</div>
+						<li class="checkedall"><input type="checkbox" class="checkall"><label for="Check_All_Locations">All of Scotland</label></li>
+						<li><input type="checkbox" class="Scotland" id="Strathclyde"><label for="Strathclyde">Strathclyde</label></li>
+						<li><input type="checkbox" class="Scotland" id="Dumfries_and_Galloway"><label for="Dumfries_and_Galloway">Dumfries and Galloway</label></li>
+						<li><input type="checkbox" class="Scotland" id="Borders"><label for="Borders">Borders</label></li>
+						<li><input type="checkbox" class="Scotland" id="Lothian"><label for="Lothian">Lothian</label></li>
+						<li><input type="checkbox" class="Scotland" id="Central"><label for="Central">Central</label></li>
+						<li><input type="checkbox" class="Scotland" id="Fife"><label for="Fife">Fife</label></li>
+						<li><input type="checkbox" class="Scotland" id="Tayside"><label for="Tayside">Tayside</label></li>
+						<li><input type="checkbox" class="Scotland" id="Grampian"><label for="Grampian">Grampian</label></li>
+						<li><input type="checkbox" class="Scotland" id="Highland"><label for="Highland">Highland</label></li>
+						<li><input type="checkbox" class="Scotland" id="Western_Isles"><label for="Western_Isles">Western Isles</label></li>
+						<li><input type="checkbox" class="Scotland" id="Shetland"><label for="Shetland">Shetland</label></li>
+						<li><input type="checkbox" class="Scotland" id="Orkney"><label for="Orkney">Orkney</label></li>
+					</ul>
+
+					<ul class="hidden">
+						<div class="subname">Wales</div>
+						<li class="checkedall"><input type="checkbox" class="checkall"><label for="Check_All_Locations">All of Wales</label></li>
+						<li><input type="checkbox" class="Wales" id="North_Wales"><label for="North_Wales">North Wales</label></li>
+						<li><input type="checkbox" class="Wales" id="Mid_Wales"><label for="Mid_Wales">Mid Wales</label></li>
+						<li><input type="checkbox" class="Wales" id="West_Wales"><label for="West_Wales">West Wales</label></li>
+						<li><input type="checkbox" class="Wales" id="South_Wales"><label for="South_Wales">South Wales</label></li>
+					</ul>
+
+					<ul class="hidden">
 						<li><input type="submit" onclick="return exports.formGet(this)" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit"></li>
-						<div class="error hidden"><div>Error! Something's wrong!</div></div></li>
-				</ul>
+						<div class="error hidden"><div>Hmmm. Something's short-circuited. Try again and if that doesn't work, <a href="contact@eventhandler.co.uk">shoot us an email</a></div></div></li>
+					</ul>
 			</fieldset>
 		</div>
 
 		<div class="location">	
 			<fieldset>
-				<div class="name">Ireland</div>
+				<div class="name">Europe</div>
 				    <ul class="hidden">
 				    	<li><input type="checkbox" class="Ireland" id="Ireland"><label for="Ireland">Ireland</label></li>
+				    	<li><input type="checkbox" class="France" id="France"><label for="France">France</label></li>
+				    	<li><input type="checkbox" class="Spain" id="Spain"><label for="Spain">Spain</label></li>
+				    	<li><input type="checkbox" class="Portugal" id="Portugaul"><label for="Portugal">Portugal</label></li>
+				    	<li><input type="checkbox" class="Italy" id="Italy"><label for="Italy">Italy</label></li>
+				    	<li><input type="checkbox" class="Germany" id="Germany"><label for="Germany">Germany</label></li>
+				    	<li><input type="checkbox" class="Sweden" id="Sweden"><label for="Sweden">Sweden</label></li>
+				    	<li><input type="checkbox" class="Netherlands" id="Netherlands"><label for="Netherlands">Netherlands</label></li>
+				    	<li><input type="checkbox" class="Poland" id="Poland"><label for="Poland">Poland</label></li>
+				    	<li><input type="checkbox" class="Finland" id="Finland"><label for="Finland">Finland</label></li>
+				    	<li><input type="checkbox" class="Norway" id="Norway"><label for="Norway">Norway</label></li>
+
 				    	<li><input type="submit" onclick="return exports.formGet(this)" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit"></li>
-						<div class="error hidden"><div>Error! Something's wrong!</div></div></li>
+						<div class="error hidden"><div>Hmmm. Something's short-circuited. Try again and if that doesn't work, <a href="contact@eventhandler.co.uk">shoot us an email</a></div></div></li>
 						</ul>
 			</fieldset>
 		</div>
 
 		<div class="location">
 			<fieldset>
-				<div class="name">Northern Ireland</div>
+				<div class="name">America</div>
 				    <ul class="hidden">
-				    	<li><input type="checkbox" class="Northern_Ireland" id="Northern_Ireland"><label for="Northern_Ireland">Northern Ireland</label></li>
+
+				    	<li><input type="checkbox" class="America" id="Alabama"><label for="Alabama">Alabama</label></li>
+				    	<li><input type="checkbox" class="America" id="Alaska"><label for="Alaska">Alaska</label></li>
+				    	<li><input type="checkbox" class="America" id="Arizona"><label for="Arizona">Arizona</label></li>
+				    	<li><input type="checkbox" class="America" id="Arkansas"><label for="Arkansas">Arkansas</label></li>
+				    	<li><input type="checkbox" class="America" id="California"><label for="California">California</label></li>
+				    	<li><input type="checkbox" class="America" id="Colorado"><label for="Colorado">Colorado</label></li>
+				    	<li><input type="checkbox" class="America" id="Connecticut"><label for="Connecticut">Connecticut</label></li>
+				    	<li><input type="checkbox" class="America" id="Delaware"><label for="Delaware">Delaware</label></li>
+				    	<li><input type="checkbox" class="America" id="Florida"><label for="Florida">Florida</label></li>
+				    	<li><input type="checkbox" class="America" id="Georgia"><label for="Georgia">Georgia</label></li>
+				    	<li><input type="checkbox" class="America" id="Hawaii"><label for="Hawaii">Hawaii</label></li>
+				    	<li><input type="checkbox" class="America" id="Idaho"><label for="Idaho">Idaho</label></li>
+				    	<li><input type="checkbox" class="America" id="Illinois"><label for="Illinois">Illinois</label></li>
+				    	<li><input type="checkbox" class="America" id="Indiana"><label for="Indiana">Indiana</label></li>
+				    	<li><input type="checkbox" class="America" id="Iowa"><label for="Iowa">Iowa</label></li>
+				    	<li><input type="checkbox" class="America" id="Kansas"><label for="Kansas">Kansas</label></li>
+				    	<li><input type="checkbox" class="America" id="Kentucky"><label for="Kentucky">Kentucky</label></li>
+				    	<li><input type="checkbox" class="America" id="Louisiana"><label for="Louisiana">Louisiana</label></li>
+				    	<li><input type="checkbox" class="America" id="Maine"><label for="Maine">Maine</label></li>
+				    	<li><input type="checkbox" class="America" id="Maryland"><label for="Maryland">Maryland</label></li>
+				    	<li><input type="checkbox" class="America" id="Massachusetts"><label for="Massachusetts">Massachusetts</label></li>
+				    	<li><input type="checkbox" class="America" id="Michigan"><label for="Michigan">Michigan</label></li>
+				    	<li><input type="checkbox" class="America" id="Minnesota"><label for="Minnesota">Minnesota</label></li>
+				    	<li><input type="checkbox" class="America" id="Mississippi"><label for="Mississippi">Mississippi</label></li>
+				    	<li><input type="checkbox" class="America" id="Missouri"><label for="Missouri">Missouri</label></li>
+				    	<li><input type="checkbox" class="America" id="Montana"><label for="Montana">Montana</label></li>
+				    	<li><input type="checkbox" class="America" id="Nebraska"><label for="Nebraska">Nebraska</label></li>
+				    	<li><input type="checkbox" class="America" id="Nevada"><label for="Nevada">Nevada</label></li>
+				    	<li><input type="checkbox" class="America" id="New_Hampshire"><label for="New_Hampshire">New Hampshire</label></li>
+				    	<li><input type="checkbox" class="America" id="New_Jersey"><label for="New_Jersey">New Jersey</label></li>
+				    	<li><input type="checkbox" class="America" id="New_Mexico"><label for="New_Mexico">New Mexico</label></li>
+				    	<li><input type="checkbox" class="America" id="New_York"><label for="New_York">New York</label></li>
+				    	<li><input type="checkbox" class="America" id="North_Carolina"><label for="North_Carolina">North Carolina</label></li>
+				    	<li><input type="checkbox" class="America" id="North_Dakota"><label for="North_Dakota">North Dakota</label></li>
+				    	<li><input type="checkbox" class="America" id="Ohio"><label for="Ohio">Ohio</label></li>
+				    	<li><input type="checkbox" class="America" id="Oklahoma"><label for="Oklahoma">Oklahoma</label></li>
+				    	<li><input type="checkbox" class="America" id="Oregon"><label for="Oregon">Oregon</label></li>
+				    	<li><input type="checkbox" class="America" id="Pennsylvania"><label for="Pennsylvania">Pennsylvania</label></li>
+				    	<li><input type="checkbox" class="America" id="Rhode_Island"><label for="Rhode_Island">Rhode Island</label></li>
+				    	<li><input type="checkbox" class="America" id="South_Carolina"><label for="South_Carolina">South_Carolina</label></li>
+				    	<li><input type="checkbox" class="America" id="South_Dakota"><label for="South_Dakota">South Dakota</label></li>
+				    	<li><input type="checkbox" class="America" id="Tennessee"><label for="Tennessee">Tennessee</label></li>
+				    	<li><input type="checkbox" class="America" id="Texas"><label for="Texas">Texas</label></li>
+				    	<li><input type="checkbox" class="America" id="Utah"><label for="Utah">Utah</label></li>
+				    	<li><input type="checkbox" class="America" id="Vermont"><label for="Vermont">Vermont</label></li>
+				    	<li><input type="checkbox" class="America" id="Virginia"><label for="Virginia">Virginia</label></li>
+				    	<li><input type="checkbox" class="America" id="Washington"><label for="Washington">Washington</label></li>
+				    	<li><input type="checkbox" class="America" id="West_Virginia"><label for="West_Virginia">West Virginia</label></li>
+				    	<li><input type="checkbox" class="America" id="Wisconsin"><label for="Wisconsin">Wisconsin</label></li>
+				    	<li><input type="checkbox" class="America" id="Wyoming"><label for="Wyoming">Wyoming</label></li>
+
 				    	<li><input type="submit" onclick="return exports.formGet(this)" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit"></li>
-						<div class="error hidden"><div>Error! Something's wrong!</div></div></li>
+						<div class="error hidden"><div>Hmmm. Something's short-circuited. Try again and if that doesn't work, <a href="contact@eventhandler.co.uk">shoot us an email</a></div></div></li>
 						</ul>
 			</fieldset>
 		</div>
 		
-		<div class="location">
-			<fieldset>
-				<div class="name">Scotland</div>
-				    <ul class="hidden">
-				    	<li><input type="checkbox" class="Scotland" id="Scotland"><label for="Scotland">Scotland</label></li>
-				    	<li><input type="submit" onclick="return exports.formGet(this)" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit"></li>
-						<div class="error hidden"><div>Error! Something's wrong!</div></div></li>
-						</ul>
-			</fieldset>
-		</div>
-
-		<div class="location">
-			<fieldset>
-				<div class="name">Wales</div>
-				    <ul>
-				    	<li><input type="checkbox" class="Wales" id="Wales"><label for="Wales">Wales</label></li>
-				    	<li><input type="submit" onclick="return exports.formGet(this)" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit">
-				    	<div class="error hidden"><div>Error! Something's wrong!</div></div></li>
-						</ul>
-			</fieldset>
-		</div>
+		
 
 		</div>
 

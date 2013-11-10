@@ -4,15 +4,42 @@ $(document).ready(function(){
 
 $(function () {
 	$('.checkall').on('click', function () {
-		$(this).closest('fieldset').find(':checkbox').prop('checked', this.checked);
+		$(this).closest('ul').find(':checkbox').prop('checked', this.checked);
+	});
+});
+
+// United Kingdom 
+
+$(function () {
+	$('.England').on('click', function () {
+		$(this).closest('ul').find('.checkall').prop('checked', false);
 	});
 });
 
 $(function () {
-	$('.England').on('click', function () {
-		$(this).closest('fieldset').find('.checkall').prop('checked', false);
+	$('.Northern_Ireland').on('click', function () {
+		$(this).closest('ul').find('.checkall').prop('checked', false);
 	});
 });
+
+$(function () {
+	$('.Scotland').on('click', function () {
+		$(this).closest('ul').find('.checkall').prop('checked', false);
+	});
+});
+
+$(function () {
+	$('.Wales').on('click', function () {
+		$(this).closest('ul').find('.checkall').prop('checked', false);
+	});
+});
+
+// Europe
+
+
+// America
+
+
 
 $(function () {
 	$('.name').on('click', function () {
