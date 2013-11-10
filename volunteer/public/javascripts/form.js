@@ -2,13 +2,15 @@ $(document).ready(function(){
     $('ul').addClass('hidden');
 });
 
+// Check all checkpoints
+
 $(function () {
 	$('.checkall').on('click', function () {
 		$(this).closest('ul').find(':checkbox').prop('checked', this.checked);
 	});
 });
 
-// United Kingdom 
+// Uncheck the "check all" checkpoint if one of the regions are unchecked
 
 $(function () {
 	$('.England').on('click', function () {
@@ -34,12 +36,8 @@ $(function () {
 	});
 });
 
-// Europe
 
-
-// America
-
-
+// Hide/UnHide blocks
 
 $(function () {
 	$('.name').on('click', function () {
