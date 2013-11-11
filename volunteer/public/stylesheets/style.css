@@ -65,6 +65,7 @@ fieldset {
 .name:hover {
 	background-color: #e3e3e3;
 	transition: 0.5s;
+	cursor: pointer;
 }
 
 .checkedall {
@@ -104,6 +105,7 @@ a:visited {
 a:hover {
 	text-decoration: underline;
 	color: #000000;
+	cursor: pointer;
 }
 
 .divider {
@@ -263,12 +265,14 @@ ul {
 .submit:hover {
 	background-color: rgba(204, 204, 51, 0.25);
 	transition: 0.5s;
+	cursor: pointer;
 }
 
 .submit:active {
 	position:relative;
 	top:1px;
 	outline: none;
+	cursor: pointer;
 }
 
 .submit:focus {
@@ -281,6 +285,19 @@ ul {
 	width:336px;
 	height: auto;
 	background-color:#FAAFAF;
+	margin-top:10px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	margin-bottom: 20px;
+	padding: 10px 0px 10px 0px;
+}
+
+.success{
+	text-align: center;
+	margin: 0 auto;
+	width:336px;
+	height: auto;
+	background-color: rgba(204, 204, 51, 0.25);
 	margin-top:10px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;

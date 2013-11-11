@@ -1,7 +1,3 @@
-$(document).ready(function(){
-    $('ul').addClass('hidden');
-});
-
 // Check all checkpoints
 
 $(function () {
