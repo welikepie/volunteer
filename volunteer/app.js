@@ -33,7 +33,6 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
-
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
@@ -47,12 +46,13 @@ app.get('/events', function(req, res) {
 
 
 app.post('/', function(req, res){
-    console.log(req.body);
+    //console.log(req.body);
     try{
     	var GROUPINGS = JSON.parse(req.body.GROUPINGS);
     	var FNAME = JSON.parse(req.body.FNAME);
     	var LNAME = JSON.parse(req.body.LNAME);
     	var EMAIL = JSON.parse(req.body.EMAIL);
+    	var listID = config.mailchimp.list[parseInt(JSON.parse(req.body.COUNT),10)];
     mcApi.listSubscribe({
     	id: listID, 
     	email_address:EMAIL, 
@@ -61,16 +61,18 @@ app.post('/', function(req, res){
     		"LNAME": LNAME, 
     		// Needed: Integration of Checkbox.js Function to retrieve groups ticked for England. 
     		"GROUPINGS": GROUPINGS}, 
-    	"double_optin": false}, 
-
+    		"double_optin": false,
+    		"update_existing":true
+    	}, 
     	function (error, data) {
         if (error){
-            res.end("{\"response\":\"error\",\"test\":false,\"error\":\""+error+"\"}");
+        
+            res.end(JSON.stringify({"response":"error","test":false,"error":JSON.stringify(error)}));
         	//console.log(error); //this is now sent to the terminal of the browser.
         }
         else {
             // console.log(data);
-            res.end("{\"response\":\"success\",\"test\":true}");
+            res.end(JSON.stringify({"response":"success","test":true}));
         }
     });
     }catch(e){
