@@ -28,6 +28,7 @@ fieldset {
 
 .introtext span {
 	display: block;
+	margin-bottom: 5px;
 }
 
 .userdeets {
@@ -128,6 +129,10 @@ ul {
 	border-bottom: dashed 1px #cccccc;
 }
 
+ul:last-child {
+	border-bottom: none;
+}
+
 ul.events {
 	border-bottom: none;
 }
@@ -150,7 +155,7 @@ li:last-child {
 }
 
 input[type="text"] {
-	width: 400px;
+	width: 380px;
 	height: 40px;
 	display: inline-block;
 	list-style: none;
@@ -163,7 +168,7 @@ input[type="text"] {
 }
 
 input[type="email"] {
-	width: 400px;
+	width: 380px;
 	height: 40px;
 	display: inline-block;
 	list-style: none;
@@ -213,7 +218,7 @@ ul {
 	padding: 0;
 }
 
-.submit,.error {
+.submit {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -271,13 +276,14 @@ ul {
 }
 
 .error{
+	text-align: center;
+	margin: 0 auto;
 	width:336px;
-	-moz-box-shadow:inset 0px 1px 0px 0px #AD6868;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #AD6868;
-	box-shadow:inset 0px 1px 0px 0px #AD6868;
+	height: auto;
 	background-color:#FAAFAF;
 	margin-top:10px;
-}
-.error div{
-	margin-top:15px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	margin-bottom: 20px;
+	padding: 10px 0px 10px 0px;
 }
